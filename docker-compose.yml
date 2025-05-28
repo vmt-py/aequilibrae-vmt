@@ -1,0 +1,11 @@
+services:
+  jupyterlab:
+    build: .
+    container_name: jupyterlab-aequilibrae
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./workspace:/workspace
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    restart: unless-stopped
